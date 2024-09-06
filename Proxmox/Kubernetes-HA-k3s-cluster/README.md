@@ -1,6 +1,6 @@
 # Deploying Kubernetes High Availability k3s cluster
 ## Create the VMs
-I always use a Ubuntu Cloud Image in a preconfigured cloud init template to speed up VMs deployment. You can create one by following my guide [here](/Proxmox/cloud%20init%20VM%20template/README.md).
+I always use a Ubuntu Cloud Image in a preconfigured cloud init template to speed up VMs deployment. You can create one by following my guide [here](/Proxmox/cloud-init-VM-template/README.md).
 
 Create 7 virtual machines as follows:
 
@@ -15,7 +15,7 @@ Create 7 virtual machines as follows:
     + Processor:  4 Cores
     + HDD:        40GB
 + **Admin VM**
-  + 1 Virtual machine to administer the cluster and run the deployment [pbk3s.sh](/Proxmox/Kubernetes%20HA%20k3s%20cluster/pbk3s.sh) script.
+  + 1 Virtual machine to administer the cluster and run the deployment [pbk3s.sh](/Proxmox/Kubernetes-HA-k3s-cluster/pbk3s.sh) script.
     + Memory:     2GB
     + Processor:  2 Cores
     + HDD:        4GB
@@ -25,10 +25,10 @@ Create 7 virtual machines as follows:
 
 ## Start all the VMs
 1. start up all the Vms and make sure all IPs are as expected.
-2. edit the [pbk3s.sh](/Proxmox/Kubernetes%20HA%20k3s%20cluster/pbk3s.sh) script with all your information.
+2. edit the [pbk3s.sh](/Proxmox/Kubernetes-HA-k3s-cluster/pbk3s.sh) script with all your information.
 3. ssh or use proxmox console and connect to the **Admin VM**.
 4. copy proxmox **/root/.ssh/id_rsa.pub** and **/root/.ssh/id_rsa** to the server user home folder.
-5. edit "VARS" section, copy and run the [pbk3s.sh](/Proxmox/Kubernetes%20HA%20k3s%20cluster/pbk3s.sh) script to/from the server user home folder.
+5. edit "VARS" section, copy and run the [pbk3s.sh](/Proxmox/Kubernetes-HA-k3s-cluster/pbk3s.sh) script to/from the server user home folder.
    + make file executable: ***sudo chmod +x pbk3s.sh***
    + run the script: ***./pbk3s.sh***
 
